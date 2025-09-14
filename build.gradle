@@ -21,7 +21,14 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-batch'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'com.h2database:h2'
+	implementation 'mysql:mysql-connector-java:8.0.33' // MySQL connector for production consideration
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0' // For Springdoc OpenAPI (Swagger UI)
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.mockito:mockito-core' // Explicitly add Mockito
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
