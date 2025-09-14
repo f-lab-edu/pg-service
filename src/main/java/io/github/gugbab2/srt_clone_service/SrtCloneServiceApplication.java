@@ -1,13 +1,13 @@
-package io.github.gugbab2.pg_service;
+package io.github.gugbab2.srt_clone_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PgServiceApplication {
+public class SrtCloneServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PgServiceApplication.class, args);
+		SpringApplication.run(SrtCloneServiceApplication.class, args);
 	}
 
 }
