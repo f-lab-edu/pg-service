@@ -27,6 +27,10 @@ public class TrainServiceImpl implements TrainService {
 
     @Override
     public List<TrainSearchResponse> searchTrainSchedules(TrainSearchRequest request) {
+        if (request.departureStation().equals(request.arrivalStation())) {
+            throw new IllegalArgumentException("출발역과 도착역은 같을 수 없습니다.");
+        }
+
         // Filter trains based on request
         return trains.stream()
                 .filter(train -> train.departureStation().equals(request.departureStation()))

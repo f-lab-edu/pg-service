@@ -28,6 +28,20 @@ class TrainControllerTest {
     private TrainService trainService;
 
     @Test
+    void 요청_값이_유효하지_않은_형식일_경우_400_Bad_Request_에러를_응답한다() throws Exception {
+        // given
+        // departureDateTime is intentionally malformed
+        String invalidDepartureDateTime = "invalid-date-format"; 
+
+        // when & then
+        mockMvc.perform(get("/api/trains")
+                .param("departureStation", "수서")
+                .param("arrivalStation", "부산")
+                .param("departureDateTime", invalidDepartureDateTime))
+            .andExpect(status().isBadRequest());
+    }
+
+    @Test
     void 유효한_조회_조건이_주어졌을_때_열차_시간표를_조회하면_열차_시간표_목록이_반환된다() throws Exception {
         // given
         LocalDateTime now = LocalDateTime.now();
