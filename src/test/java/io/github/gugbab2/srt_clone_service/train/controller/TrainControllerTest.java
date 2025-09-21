@@ -69,6 +69,20 @@ class TrainControllerTest {
     }
 
     @Test
+    @DisplayName("출발역과 도착역이 같으면 INVALID_INPUT_VALUE 에러를 반환한다")
+    void whenDepartureAndArrivalStationsAreSame_thenReturnsBadRequest() throws Exception {
+        // given
+        LocalDateTime departureDateTime = LocalDateTime.of(2025, 9, 15, 9, 0);
+
+        // when & then
+        mockMvc.perform(get("/api/trains")
+                        .param("departureStation", "수서")
+                        .param("arrivalStation", "수서") // Same departure and arrival
+                        .param("departureDateTime", departureDateTime.toString()))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
     @DisplayName("요청 값이 유효하지 않은 형식(예: 잘못된 날짜)일 경우 400 Bad Request 에러를 응답한다")
     void whenRequestFormatIsInvalid_thenReturns400BadRequest() throws Exception {
         // given

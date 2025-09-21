@@ -35,7 +35,6 @@ public class TrainServiceImpl implements TrainService {
         return trains.stream()
                 .filter(train -> train.departureStation().equals(request.departureStation()))
                 .filter(train -> train.arrivalStation().equals(request.arrivalStation()))
-                // For simplicity, date is not considered in in-memory data, only time
                 .filter(train -> !train.departureDateTime().isBefore(request.departureDateTime()))
                 .map(this::mapToTrainSearchResponse)
                 .collect(Collectors.toList());
