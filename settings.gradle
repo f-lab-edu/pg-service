@@ -1,1 +1,7 @@
 rootProject.name = 'srt-clone-service'
+
+include 'modules:core'
+include 'modules:train'
+include 'modules:reservation'
+include 'modules:member'
+include 'modules:payment'

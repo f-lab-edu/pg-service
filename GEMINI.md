@@ -28,7 +28,7 @@
 
 - **`*Test.java`**
     - 테스트 코드는 BDD 스타일(`given-when-then` 주석 활용)로 작성하여 시나리오를 명확하게 표현합니다.
-    - **테스트 메서드 이름은 한글로 작성하여 테스트의 의도를 명확히 드러냅니다. (예: `given_유효한_데이터가_주어졌을_때_when_저장을_요청하면_then_성공적으로_저장된다`)**
+    - **테스트 메서드 이름은 영어 카멜케이스로 작성하고, `@DisplayName` 어노테이션을 사용하여 `docs/test_cases.md`에 명시된 테스트 케이스 설명을 그대로 작성합니다. (예: `@DisplayName("유효한 데이터가 주어졌을 때 저장을 요청하면 성공적으로 저장된다") void givenValidData_whenRequestingSave_thenShouldBeSavedSuccessfully()`)**
     - 의존성 모의(mocking)를 위해 Mockito를 사용합니다.
 
 - **`build.gradle`**

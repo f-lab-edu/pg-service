@@ -1,0 +1,9 @@
+import Libs
+
+bootJar {
+    enabled = false
+}
+
+dependencies {
+    implementation project(':modules:core')
+}
