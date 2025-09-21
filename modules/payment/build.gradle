@@ -1,0 +1,8 @@
+bootJar {
+    enabled = false
+}
+
+dependencies {
+    implementation project(':modules:core')
+    implementation project(':modules:reservation')
+}
